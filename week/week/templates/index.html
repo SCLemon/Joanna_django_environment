@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .week{
+        font-size: 40px;
+        height: 80px;
+        line-height: 80px;
+        font-weight: bolder;
+    }
+    .timeBox{
+        height: 60px;
+        display: flex;
+        align-items: center;
+    }
+    .time{
+        font-style: italic;
+    }
+    .solid{
+        border-bottom: 1px solid black;
+        line-height: 2;
+    }
+    .dashed{
+        border-bottom: 1px dashed black;
+        line-height: 2;
+    }
+    .time{
+        font-style: italic;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div class="solid week">week1</div>
+    <div class="solid timeBox"><div>現在時間為 <span id="time" class="time"></span></div></div>
+    <div class="contentBox" id="contentBox"></div>
+</body>
+<script>
+    document.getElementById('time').innerText = `${new Date().getFullYear()} 年 ${new Date().getMonth()+1} 月 ${new Date().getDate()} 日 ${new Date().getHours()}:${new Date().getMinutes()}`
+    var html = '';
+    var list = [
+        '生活就是一場無法預測的旅程，每一步都充滿了無限的可能性，雖然很多時候，這些可能性也只是未知的選擇。',
+        '每當你走過街角，世界似乎就會向你展開一個全新的面貌，無論你是否準備好去迎接。',
+        '有時候，靜下來思考，也許會發現，自己一直在走一條循環的路，但這也並不意味著不值得走。',
+        '生活中的每一個小細節，都似乎在告訴我們，未來並不是一條直線，而是充滿了曲折的岔路。',
+        '我們都在追求一個看似無法觸及的目標，但也許那個目標根本就不存在，只是我們自己心中的一個影像。'
+    ]
+    for(var i = list.length-1 ; i >= 0; i--){
+        html += `
+            <div class="${i?'dashed':'solid'}">
+                <div class="title ">${i+1}</div>
+                <div class="content ">${list[i]}</div>
+            </div>
+        `
+    }
+    document.getElementById('contentBox').innerHTML = html
+</script>
+</html>
