@@ -52,8 +52,8 @@ INSTALLED_APPS = [
 
 ```
 Step 2. 於與 setting.py 同級目錄下建立 templates 資料夾
-Step 3. 於 templates 資料夾下建立 index.html
 
+Step 3. 於 templates 資料夾下建立 index.html
 
 Step 4. 於 setting.py 同級目錄下建立 view.py (若無，則自行新增)
 ```
@@ -73,5 +73,6 @@ urlpatterns = [
 ]
 
 ```
-完成以上步驟，即可藉由 http://127.0.0.1:8000/ 訪問 index.html
+完成以上步驟，重啟伺服器
+即可藉由 http://127.0.0.1:8000/ 訪問 index.html
 
